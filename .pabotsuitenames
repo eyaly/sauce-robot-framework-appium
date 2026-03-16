@@ -1,0 +1,12 @@
+datasources:18b5ae35b4337521bdb3599f3ca5bb5003e00204
+commandlineoptions:690611fc3044860a7590e414b4bf0214ad18c978
+suitesfrom:no-suites-from-option
+file:75565812250e3c1208a044fd3a5e428e6b021f2d
+--test Suites.Android Device.Sortitem Popup Is Opened
+--test Suites.Android Device.Selectitem
+--test Suites.Android Emulator.Sortitem Popup Is Opened
+--test Suites.Android Emulator.Selectitem
+--test Suites.Ios Device.Sortitem Popup Is Opened
+--test Suites.Ios Device.Selectitem
+--test Suites.Ios Simulator.Sortitem Popup Is Opened
+--test Suites.Ios Simulator.Selectitem

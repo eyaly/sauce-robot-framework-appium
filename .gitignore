@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+ENV/
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+*.manifest
+*.spec
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.mypy_cache/
+.ruff_cache/
+
+# Environment and secrets
+.env
+.env.local
+*.pem
+
+# Robot Framework
+output.xml
+log.html
+report.html
+pabot_results/
+pabot_output.xml
+screenshot*.png
+selenium-screenshot-*.png
+Appium*.png
+NONE
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Optional: uncomment if you use local override files you don't want to commit
+# .env.override
+# local_*.robot

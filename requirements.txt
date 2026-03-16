@@ -1,0 +1,4 @@
+robotframework>=6.0
+robotframework-appiumlibrary>=2.0
+Appium-Python-Client>=3.0
+robotframework-pabot>=2.0
