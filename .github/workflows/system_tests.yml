@@ -13,6 +13,7 @@ jobs:
     env:
       SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
       SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+      BUILD_TAG: ${{ github.event.repository.name }}-${{ github.run_number }}
 
     steps:
       - name: Checkout
@@ -35,4 +36,15 @@ jobs:
           source venv/bin/activate
           chmod +x run_tests.sh
           ./run_tests.sh
+
+      - name: Upload Robot logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-logs
+          path: |
+            output.xml
+            log.html
+            report.html
+            pabot_results/
 

@@ -26,7 +26,8 @@ Open Sauce Application
     [Arguments]    &{capabilities}
     ${remote_url}=    Get Sauce Remote Url
     # sauce:options = Sauce Labs–specific settings. appiumVersion from ${APPIUM_VERSION} (set per suite).
-    ${build_tag}=    Get Environment Variable    BUILD_TAG
+    # BUILD_TAG is optional (e.g. set by CI). If missing, fall back to timestamp.
+    ${build_tag}=    Get Environment Variable    BUILD_TAG    default=
     ${build}=    Run Keyword If    '${build_tag}'!=''    Set Variable    ${build_tag}    ELSE    Get Time    format=%Y%m%d_%H%M%S
     ${sauce_options}=    Create Dictionary    appiumVersion=${APPIUM_VERSION}    build=${build}    name=${TEST_NAME}
     Run Keyword If    '${SAUCE_ARM_REQUIRED}'.lower()=='true'    Set To Dictionary    ${sauce_options}    armRequired=${True}
