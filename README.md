@@ -18,8 +18,6 @@ sauce-robot-framework-appium/
 │   └── ios_simulator.robot    # iOS on simulator (parallel)
 ├── requirements.txt
 ├── run_tests.sh               # Runs all 8 tests in parallel (pabot, test-level split)
-├── run_android_parallel.sh   # Android: 4 in parallel (2 devices + 2 emulators, test-level split)
-├── run_android_device_parallel.sh   # Android device: 2 tests on 2 devices (test-level split)
 └── README.md
 ```
 
@@ -98,26 +96,6 @@ With `--testlevelsplit`, each of the 8 test cases runs in its own process (own S
 ```bash
 robot tests/android_emulator.robot
 ```
-
-**Android: 4 in parallel (2 real devices + 2 emulators):**
-
-```bash
-./run_android_parallel.sh
-```
-
-Or: `pabot --processes 4 --testlevelsplit tests/android_device.robot tests/android_emulator.robot`
-
-With `--testlevelsplit`, each of the 4 test cases runs in its own process (own Sauce session): 2 real devices (Sortitem Popup Is Opened + Selectitem) and 2 emulators (Sortitem Popup Is Opened + Selectitem), all at once.
-
-**Android real device only: 2 test cases on 2 devices in parallel:**
-
-```bash
-./run_android_device_parallel.sh
-```
-
-Or: `pabot --processes 2 --testlevelsplit tests/android_device.robot`
-
-With `--testlevelsplit`, pabot splits at **test case** level so Sortitem Popup Is Opened and Selectitem run on two different real devices in parallel.
 
 **Override app path** (if your app has a different name in Sauce Storage or you use a URL):
 
