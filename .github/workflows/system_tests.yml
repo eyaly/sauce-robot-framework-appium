@@ -32,10 +32,15 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install saucectl
+      - name: Install saucectl (no run)
         uses: saucelabs/saucectl-run-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          run: saucectl --version
+          skip-run: true
+
+      - name: Verify saucectl version
+        run: saucectl --version
 
       - name: Run system tests (run_tests.sh)
         run: |
