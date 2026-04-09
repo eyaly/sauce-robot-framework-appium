@@ -32,6 +32,11 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v4
+        with:
+          run: saucectl --version
+
       - name: Run system tests (run_tests.sh)
         run: |
           source venv/bin/activate
