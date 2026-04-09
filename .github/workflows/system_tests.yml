@@ -42,6 +42,10 @@ jobs:
       - name: Verify saucectl version
         run: saucectl --version
 
+      - name: Upload abc.apk to Sauce Storage
+        run: |
+          saucectl storage upload abc.apk --region eu-central-1 --out json
+
       - name: Run system tests (run_tests.sh)
         run: |
           source venv/bin/activate
